@@ -1,0 +1,2088 @@
+:root {
+  --background: #f4f0e8;
+  --surface: #ebe5da;
+  --ink: #17221c;
+  --muted: #667169;
+  --forest: #1e3329;
+  --forest-light: #30493b;
+  --gold: #c9a66b;
+  --cream: #f8f4ec;
+  --line: rgba(23, 34, 28, 0.14);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--background);
+  color: var(--ink);
+  font-family: var(--font-sans), Arial, sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+main {
+  overflow: hidden;
+}
+
+.hero {
+  position: relative;
+  min-height: 100svh;
+  display: flex;
+  align-items: center;
+  color: white;
+  isolation: isolate;
+}
+
+.hero-background {
+  position: absolute;
+  inset: -8%;
+  z-index: -3;
+  background:
+    radial-gradient(circle at 65% 40%, rgba(201, 166, 107, 0.18), transparent 28%),
+    linear-gradient(135deg, #1b2a23 0%, #30483a 42%, #17221c 100%);
+  transform: scale(1.1);
+}
+
+.hero-background::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255,255,255,.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.03) 1px, transparent 1px);
+  background-size: 60px 60px;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  background:
+    linear-gradient(90deg, rgba(8, 15, 11, 0.72), rgba(8, 15, 11, 0.22)),
+    linear-gradient(0deg, rgba(8, 15, 11, 0.22), transparent 40%);
+}
+
+.site-header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 105px;
+  padding: 0 5vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.16);
+  z-index: 10;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.brand-mark {
+  color: var(--gold);
+  font-size: 28px;
+}
+
+.brand strong,
+.brand small {
+  display: block;
+}
+
+.brand strong {
+  font-family: var(--font-serif), Georgia, serif;
+  font-size: 23px;
+  font-weight: 600;
+}
+
+.brand small {
+  margin-top: 3px;
+  font-size: 9px;
+  letter-spacing: 0.18em;
+  opacity: 0.7;
+}
+
+.desktop-nav {
+  display: flex;
+  gap: 30px;
+  font-size: 13px;
+}
+
+.desktop-nav a {
+  opacity: 0.85;
+  transition: opacity 0.25s ease;
+}
+
+.desktop-nav a:hover {
+  opacity: 1;
+}
+
+.header-button {
+  border: 1px solid rgba(255,255,255,.55);
+  padding: 13px 20px;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.hero-content {
+  width: min(1120px, 90vw);
+  margin: 70px auto 0;
+}
+
+.eyebrow {
+  margin-bottom: 24px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.25em;
+  color: var(--gold);
+}
+
+.eyebrow.dark {
+  color: #836b45;
+}
+
+.hero h1,
+.intro-section h2,
+.section-heading h2,
+.missions-content h2,
+.worship-content h2,
+.giving-section h2,
+.visit-section h2 {
+  font-family: var(--font-serif), Georgia, serif;
+  font-weight: 500;
+  line-height: 0.92;
+}
+
+.hero h1 {
+  max-width: 900px;
+  font-size: clamp(4rem, 8vw, 8.5rem);
+}
+
+.hero h1 span,
+.intro-section h2 span,
+.missions-content h2 span,
+.worship-content h2 span,
+.giving-section h2 span,
+.visit-section h2 span {
+  display: block;
+  font-style: italic;
+  font-weight: 400;
+}
+
+.hero h1 span {
+  color: #e4cfaa;
+}
+
+.hero-copy {
+  max-width: 580px;
+  margin-top: 34px;
+  font-size: 17px;
+  line-height: 1.7;
+  color: rgba(255,255,255,.78);
+}
+
+.hero-actions {
+  display: flex;
+  align-items: center;
+  gap: 34px;
+  margin-top: 36px;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 54px;
+  padding: 0 26px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.primary-button {
+  background: var(--gold);
+  color: #152018;
+}
+
+.text-button {
+  font-size: 13px;
+}
+
+.text-button span {
+  margin-left: 8px;
+}
+
+.scroll-indicator {
+  position: absolute;
+  right: 4vw;
+  bottom: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.scroll-indicator span {
+  writing-mode: vertical-rl;
+  font-size: 8px;
+  letter-spacing: .3em;
+  opacity: .6;
+}
+
+.scroll-line {
+  width: 1px;
+  height: 55px;
+  background: rgba(255,255,255,.4);
+}
+
+.service-strip {
+  min-height: 130px;
+  padding: 30px 6vw;
+  background: var(--cream);
+  display: grid;
+  grid-template-columns: 1fr 1fr 1.4fr auto;
+  align-items: center;
+  gap: 30px;
+  border-bottom: 1px solid var(--line);
+}
+
+.service-strip div {
+  border-right: 1px solid var(--line);
+}
+
+.service-strip span,
+.service-strip strong {
+  display: block;
+}
+
+.service-label {
+  margin-bottom: 7px;
+  font-size: 9px;
+  letter-spacing: .16em;
+  color: var(--muted);
+}
+
+.service-strip strong {
+  font-family: var(--font-serif), Georgia, serif;
+  font-size: 21px;
+  font-weight: 600;
+}
+
+.service-strip > a {
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.intro-section {
+  position: relative;
+  padding: 150px 8vw;
+  display: grid;
+  grid-template-columns: .5fr 2fr 1fr;
+  gap: 70px;
+}
+
+.section-number {
+  font-family: var(--font-serif), Georgia, serif;
+  font-size: 72px;
+  color: rgba(23,34,28,.1);
+}
+
+.intro-section h2 {
+  max-width: 700px;
+  font-size: clamp(3rem, 5.5vw, 6rem);
+}
+
+.intro-section h2 span {
+  color: #8e7450;
+}
+
+.intro-copy {
+  padding-top: 60px;
+}
+
+.intro-copy p {
+  margin-bottom: 22px;
+  color: var(--muted);
+  line-height: 1.8;
+  font-size: 15px;
+}
+
+.intro-copy a,
+.worship-content a {
+  display: inline-block;
+  margin-top: 15px;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.ministries-section,
+.events-section {
+  padding: 120px 8vw;
+  background: var(--surface);
+}
+
+.section-heading {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 50px;
+  margin-bottom: 70px;
+}
+
+.section-heading h2 {
+  font-size: clamp(3rem, 5vw, 5.5rem);
+}
+
+.section-heading > p {
+  max-width: 470px;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.ministry-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border-top: 1px solid var(--line);
+}
+
+.ministry-card {
+  min-height: 350px;
+  padding: 38px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-right: 1px solid var(--line);
+  transition:
+    transform .35s ease,
+    background .35s ease;
+}
+
+.ministry-card:last-child {
+  border-right: 0;
+}
+
+.ministry-card:hover {
+  background: var(--cream);
+  transform: translateY(-8px);
+}
+
+.card-number {
+  font-family: var(--font-serif), Georgia, serif;
+  color: #927954;
+}
+
+.ministry-card h3 {
+  margin-bottom: 16px;
+  font-family: var(--font-serif), Georgia, serif;
+  font-size: 35px;
+  font-weight: 500;
+}
+
+.ministry-card p {
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.ministry-card a {
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.missions-parallax {
+  position: relative;
+  min-height: 850px;
+  display: flex;
+  align-items: center;
+  color: white;
+  isolation: isolate;
+}
+
+.parallax-layer {
+  position: absolute;
+  inset: -10%;
+  z-index: -3;
+  background:
+    radial-gradient(circle at 75% 35%, rgba(201,166,107,.28), transparent 30%),
+    linear-gradient(135deg, #415d4a, #16241c);
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+}
+
+.parallax-layer::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(115deg, transparent 0 60%, rgba(255,255,255,.045) 60% 61%, transparent 61%),
+    linear-gradient(25deg, transparent 0 70%, rgba(255,255,255,.035) 70% 71%, transparent 71%);
+}
+
+.missions-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  background: linear-gradient(90deg, rgba(10,20,14,.86), rgba(10,20,14,.32));
+}
+
+.missions-content {
+  width: min(720px, 84vw);
+  margin-left: 10vw;
+}
+
+.missions-content h2 {
+  font-size: clamp(3.8rem, 6.5vw, 7rem);
+}
+
+.missions-content h2 span {
+  color: #dec7a0;
+}
+
+.missions-content > p {
+  max-width: 600px;
+  margin-top: 30px;
+  line-height: 1.8;
+  color: rgba(255,255,255,.75);
+}
+
+.mission-links {
+  margin: 38px 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.mission-links a {
+  padding: 11px 16px;
+  border: 1px solid rgba(255,255,255,.25);
+  font-size: 11px;
+}
+
+.light-button {
+  background: var(--cream);
+  color: var(--ink);
+}
+
+.events-section {
+  background: var(--cream);
+}
+
+.events-list {
+  border-top: 1px solid var(--line);
+}
+
+.event-row {
+  min-height: 145px;
+  display: grid;
+  grid-template-columns: 150px 1fr 50px;
+  align-items: center;
+  border-bottom: 1px solid var(--line);
+  transition: padding .25s ease;
+}
+
+.event-row:hover {
+  padding-left: 14px;
+}
+
+.event-date span,
+.event-date strong {
+  display: block;
+}
+
+.event-date span {
+  font-size: 10px;
+  letter-spacing: .15em;
+  color: #836b45;
+}
+
+.event-date strong {
+  font-family: var(--font-serif), Georgia, serif;
+  font-size: 48px;
+  font-weight: 500;
+}
+
+.event-details h3 {
+  font-family: var(--font-serif), Georgia, serif;
+  font-size: 30px;
+  font-weight: 500;
+}
+
+.event-details p {
+  margin-top: 6px;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.event-row > a {
+  font-size: 25px;
+}
+
+.worship-section {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  min-height: 720px;
+}
+
+.worship-image {
+  padding: 70px;
+  background: #24352b;
+}
+
+.image-placeholder {
+  width: 100%;
+  height: 100%;
+  min-height: 560px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background:
+    linear-gradient(145deg, rgba(201,166,107,.18), transparent),
+    #31473a;
+  border: 1px solid rgba(255,255,255,.14);
+}
+
+.image-placeholder span {
+  color: rgba(255,255,255,.35);
+  font-size: 10px;
+  letter-spacing: .25em;
+}
+
+.worship-content {
+  padding: 100px 8vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.worship-content h2 {
+  font-size: clamp(3.5rem, 5vw, 6rem);
+}
+
+.worship-content h2 span {
+  color: #95774f;
+}
+
+.worship-content p {
+  margin-top: 30px;
+  color: var(--muted);
+  line-height: 1.8;
+}
+
+.giving-section {
+  padding: 120px 9vw;
+  background: var(--forest);
+  color: white;
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 80px;
+  align-items: end;
+}
+
+.giving-section h2 {
+  font-size: clamp(3.5rem, 5.5vw, 6.5rem);
+}
+
+.giving-section h2 span {
+  color: #e0c79e;
+}
+
+.giving-section > div:last-child p {
+  margin-bottom: 30px;
+  max-width: 500px;
+  line-height: 1.8;
+  color: rgba(255,255,255,.72);
+}
+
+.visit-section {
+  padding: 150px 20px;
+  text-align: center;
+}
+
+.visit-section h2 {
+  margin: 0 auto 40px;
+  font-size: clamp(4rem, 7vw, 8rem);
+}
+
+.visit-section h2 span {
+  color: #9b7e54;
+}
+
+.dark-button {
+  background: var(--ink);
+  color: white;
+}
+
+footer {
+  padding: 70px 7vw;
+  background: #101713;
+  color: white;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 50px;
+}
+
+footer strong,
+footer span,
+footer a,
+footer p {
+  display: block;
+}
+
+footer span {
+  margin-bottom: 10px;
+  color: rgba(255,255,255,.42);
+  font-size: 9px;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+}
+
+footer strong {
+  font-family: var(--font-serif), Georgia, serif;
+  font-size: 22px;
+}
+
+footer p,
+footer a {
+  margin-bottom: 7px;
+  color: rgba(255,255,255,.67);
+  font-size: 12px;
+}
+
+.footer-brand strong {
+  font-size: 34px;
+}
+
+@media (max-width: 950px) {
+  .desktop-nav {
+    display: none;
+  }
+
+  .site-header {
+    height: 88px;
+  }
+
+  .hero h1 {
+    font-size: clamp(4rem, 12vw, 7rem);
+  }
+
+  .service-strip {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .service-strip div {
+    border-right: 0;
+  }
+
+  .intro-section {
+    grid-template-columns: 1fr;
+    gap: 25px;
+    padding: 100px 7vw;
+  }
+
+  .section-number {
+    font-size: 45px;
+  }
+
+  .intro-copy {
+    padding-top: 0;
+  }
+
+  .section-heading {
+    align-items: start;
+    flex-direction: column;
+  }
+
+  .ministry-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .ministry-card {
+    min-height: 280px;
+    border-right: 0;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .worship-section,
+  .giving-section {
+    grid-template-columns: 1fr;
+  }
+
+  footer {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 650px) {
+  .header-button {
+    display: none;
+  }
+
+  .hero-content {
+    margin-top: 90px;
+  }
+
+  .hero h1 {
+    font-size: clamp(3.5rem, 17vw, 5.5rem);
+  }
+
+  .hero-actions {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .scroll-indicator {
+    display: none;
+  }
+
+  .service-strip {
+    grid-template-columns: 1fr;
+    padding: 35px 7vw;
+  }
+
+  .service-strip > div {
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .ministries-section,
+  .events-section {
+    padding: 90px 7vw;
+  }
+
+  .missions-content {
+    margin-left: 7vw;
+  }
+
+  .parallax-layer {
+    background-attachment: scroll;
+  }
+
+  .event-row {
+    grid-template-columns: 90px 1fr 25px;
+  }
+
+  .event-date strong {
+    font-size: 38px;
+  }
+
+  .event-details h3 {
+    font-size: 23px;
+  }
+
+  .worship-image {
+    padding: 25px;
+  }
+
+  .image-placeholder {
+    min-height: 420px;
+  }
+
+  .worship-content,
+  .giving-section {
+    padding: 90px 7vw;
+  }
+
+  footer {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+
+  .parallax-layer {
+    background-attachment: scroll;
+  }
+}
+
+/* Salt & Light Church branding */
+.brand-logo {
+  display: flex;
+  align-items: center;
+}
+
+.brand-logo img {
+  width: 165px;
+  height: auto;
+  object-fit: contain;
+}
+
+.footer-brand img {
+  width: 210px;
+  height: auto;
+  object-fit: contain;
+}
+
+.site-header {
+  height: 118px;
+}
+
+@media (max-width: 950px) {
+  .site-header {
+    height: 96px;
+  }
+
+  .brand-logo img {
+    width: 145px;
+  }
+}
+
+@media (max-width: 650px) {
+  .brand-logo img {
+    width: 125px;
+  }
+
+  .footer-brand img {
+    width: 180px;
+  }
+}
+
+/* Refined Salt & Light emblem sizing */
+.brand-logo img {
+  width: 190px;
+  max-height: 92px;
+  object-fit: contain;
+  object-position: left center;
+}
+
+.footer-brand img {
+  width: 280px;
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+@media (max-width: 950px) {
+  .brand-logo img {
+    width: 165px;
+    max-height: 78px;
+  }
+}
+
+@media (max-width: 650px) {
+  .brand-logo img {
+    width: 145px;
+    max-height: 68px;
+  }
+
+  .footer-brand img {
+    width: 230px;
+  }
+}
+
+/* Primary horizontal Salt & Light logo */
+.brand-logo img {
+  width: 330px;
+  max-height: 86px;
+  object-fit: contain;
+  object-position: left center;
+}
+
+.footer-brand img {
+  width: 360px;
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+@media (max-width: 1100px) {
+  .brand-logo img {
+    width: 270px;
+  }
+}
+
+@media (max-width: 950px) {
+  .brand-logo img {
+    width: 230px;
+    max-height: 72px;
+  }
+}
+
+@media (max-width: 650px) {
+  .brand-logo img {
+    width: 190px;
+    max-height: 62px;
+  }
+
+  .footer-brand img {
+    width: 260px;
+  }
+}
+
+
+
+
+/* Footer compact brand mark */
+.footer-brand img {
+  width: 110px;
+  height: 110px;
+  object-fit: contain;
+}
+
+/* =========================================================
+   HERO SIZE REFINEMENT
+   ========================================================= */
+
+.hero {
+  min-height: 76vh;
+  padding-top: 118px;
+}
+
+.hero-content {
+  margin-top: 10px;
+}
+
+.hero h1 {
+  max-width: 820px;
+  font-size: clamp(3.6rem, 6.4vw, 7rem);
+}
+
+.hero-copy {
+  margin-top: 26px;
+}
+
+.hero-actions {
+  margin-top: 30px;
+}
+
+.scroll-indicator {
+  bottom: 24px;
+}
+
+@media (max-width: 950px) {
+  .hero {
+    min-height: 72vh;
+    padding-top: 100px;
+  }
+
+  .hero h1 {
+    font-size: clamp(3.4rem, 10vw, 6rem);
+  }
+}
+
+@media (max-width: 650px) {
+  .hero {
+    min-height: auto;
+    padding: 135px 0 80px;
+  }
+
+  .hero-content {
+    margin-top: 0;
+  }
+
+  .hero h1 {
+    font-size: clamp(3.1rem, 15vw, 4.8rem);
+  }
+}
+
+/* =========================================================
+   HOMEPAGE PROPORTION / RHYTHM REFINEMENT
+   ========================================================= */
+
+/* HERO */
+.hero {
+  min-height: 68vh;
+  padding-top: 108px;
+}
+
+.hero-content {
+  width: min(1080px, 88vw);
+  margin-top: 0;
+}
+
+.hero h1 {
+  max-width: 760px;
+  font-size: clamp(3.4rem, 5.8vw, 6.2rem);
+}
+
+.hero-copy {
+  max-width: 540px;
+  margin-top: 22px;
+  font-size: 16px;
+  line-height: 1.65;
+}
+
+.hero-actions {
+  margin-top: 26px;
+}
+
+/* SERVICE STRIP */
+.service-strip {
+  min-height: 105px;
+  padding-top: 22px;
+  padding-bottom: 22px;
+}
+
+/* INTRO */
+.intro-section {
+  padding-top: 105px;
+  padding-bottom: 105px;
+  gap: 52px;
+}
+
+.section-number {
+  font-size: 58px;
+}
+
+.intro-section h2 {
+  font-size: clamp(2.8rem, 4.7vw, 5.1rem);
+}
+
+.intro-copy {
+  padding-top: 38px;
+}
+
+/* MINISTRIES */
+.ministries-section,
+.events-section {
+  padding-top: 90px;
+  padding-bottom: 90px;
+}
+
+.section-heading {
+  margin-bottom: 52px;
+}
+
+.section-heading h2 {
+  font-size: clamp(2.8rem, 4.4vw, 4.8rem);
+}
+
+.ministry-card {
+  min-height: 290px;
+  padding: 32px;
+}
+
+/* FAITH IN ACTION */
+.missions-parallax {
+  min-height: 610px;
+}
+
+.missions-content {
+  width: min(680px, 82vw);
+  margin-left: 8vw;
+}
+
+.missions-content h2 {
+  font-size: clamp(3.2rem, 5vw, 5.6rem);
+}
+
+.missions-content > p {
+  margin-top: 22px;
+  max-width: 560px;
+  line-height: 1.7;
+}
+
+.mission-links {
+  margin: 28px 0;
+}
+
+/* EVENTS */
+.event-row {
+  min-height: 118px;
+}
+
+.event-date strong {
+  font-size: 42px;
+}
+
+.event-details h3 {
+  font-size: 27px;
+}
+
+/* WORSHIP */
+.worship-section {
+  min-height: 580px;
+}
+
+.worship-image {
+  padding: 50px;
+}
+
+.image-placeholder {
+  min-height: 460px;
+}
+
+.worship-content {
+  padding-top: 75px;
+  padding-bottom: 75px;
+}
+
+.worship-content h2 {
+  font-size: clamp(3rem, 4.5vw, 5.2rem);
+}
+
+/* GIVING */
+.giving-section {
+  padding-top: 90px;
+  padding-bottom: 90px;
+}
+
+.giving-section h2 {
+  font-size: clamp(3rem, 4.8vw, 5.5rem);
+}
+
+/* FINAL CTA */
+.visit-section {
+  padding-top: 105px;
+  padding-bottom: 105px;
+}
+
+.visit-section h2 {
+  font-size: clamp(3.4rem, 5.8vw, 6.5rem);
+  margin-bottom: 32px;
+}
+
+/* FOOTER */
+footer {
+  padding-top: 55px;
+  padding-bottom: 55px;
+}
+
+/* TABLET */
+@media (max-width: 950px) {
+  .hero {
+    min-height: 64vh;
+  }
+
+  .missions-parallax {
+    min-height: 540px;
+  }
+
+  .intro-section,
+  .ministries-section,
+  .events-section,
+  .giving-section,
+  .visit-section {
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
+}
+
+/* MOBILE */
+@media (max-width: 650px) {
+  .hero {
+    min-height: auto;
+    padding-top: 125px;
+    padding-bottom: 68px;
+  }
+
+  .hero h1 {
+    font-size: clamp(3rem, 13vw, 4.4rem);
+  }
+
+  .missions-parallax {
+    min-height: auto;
+    padding: 85px 0;
+  }
+
+  .missions-content {
+    margin-left: 7vw;
+    width: 86vw;
+  }
+
+  .ministries-section,
+  .events-section,
+  .intro-section,
+  .worship-content,
+  .giving-section,
+  .visit-section {
+    padding-top: 70px;
+    padding-bottom: 70px;
+  }
+
+  .ministry-card {
+    min-height: 250px;
+  }
+
+  .event-row {
+    min-height: 105px;
+  }
+
+  .worship-image {
+    padding: 24px;
+  }
+
+  .image-placeholder {
+    min-height: 360px;
+  }
+}
+
+/* =========================================================
+   PLACEHOLDER PHOTOGRAPHY
+   ========================================================= */
+
+.hero-background {
+  background-size: cover !important;
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
+}
+
+.worship-image {
+  position: relative;
+  overflow: hidden;
+  padding: 0;
+  min-height: 100%;
+}
+
+.worship-photo {
+  width: 100%;
+  height: 100%;
+  min-height: 520px;
+  display: block;
+  object-fit: cover;
+  object-position: center;
+}
+
+@media (max-width: 950px) {
+  .worship-photo {
+    min-height: 440px;
+  }
+}
+
+@media (max-width: 650px) {
+  .worship-photo {
+    min-height: 340px;
+  }
+}
+
+/* =========================================================
+   IMAGE SYSTEM FIX
+   Real Next.js images instead of tiled CSS backgrounds
+   ========================================================= */
+
+/* HERO */
+
+.hero {
+  position: relative;
+  isolation: isolate;
+}
+
+.hero-photo {
+  position: absolute !important;
+  inset: 0;
+  z-index: -3;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover;
+  object-position: center 45%;
+}
+
+/* Keep the dark overlay on top of the photo */
+.hero-overlay {
+  z-index: -2;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(7, 19, 15, 0.86) 0%,
+      rgba(7, 19, 15, 0.62) 45%,
+      rgba(7, 19, 15, 0.28) 100%
+    ),
+    linear-gradient(
+      0deg,
+      rgba(7, 19, 15, 0.40),
+      transparent 55%
+    );
+}
+
+/* Disable the old hero-background behavior */
+.hero-background {
+  display: none !important;
+}
+
+
+/* FAITH IN ACTION / MISSIONS */
+
+.missions-parallax {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.missions-photo {
+  position: absolute !important;
+  inset: -6% 0;
+  z-index: -3;
+  width: 100% !important;
+  height: 112% !important;
+  object-fit: cover;
+  object-position: center;
+}
+
+.missions-overlay {
+  z-index: -2;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(8, 24, 18, 0.93) 0%,
+      rgba(8, 24, 18, 0.78) 42%,
+      rgba(8, 24, 18, 0.38) 100%
+    );
+}
+
+/* Disable old synthetic background */
+.parallax-layer {
+  display: none !important;
+}
+
+
+/* WORSHIP PHOTO */
+
+.worship-image {
+  position: relative;
+  overflow: hidden;
+  padding: 0 !important;
+  min-height: 520px;
+  background: var(--brand-green-deep);
+}
+
+.worship-photo {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 520px;
+  object-fit: cover;
+  object-position: center;
+}
+
+
+/* Responsive */
+
+@media (max-width: 950px) {
+  .hero-photo {
+    object-position: center;
+  }
+
+  .missions-photo {
+    inset: 0;
+    width: 100% !important;
+    height: 100% !important;
+  }
+
+  .worship-image,
+  .worship-photo {
+    min-height: 420px;
+  }
+}
+
+@media (max-width: 650px) {
+  .worship-image,
+  .worship-photo {
+    min-height: 330px;
+  }
+
+  .missions-photo {
+    object-position: 60% center;
+  }
+}
+
+/* =========================================================
+   MISSIONS CTA / SECTION SEPARATION
+   ========================================================= */
+
+.missions-parallax {
+  padding-top: 78px;
+  padding-bottom: 92px;
+}
+
+.missions-content {
+  position: relative;
+  z-index: 2;
+}
+
+.missions-content .light-button {
+  margin-top: 8px;
+  background: var(--brand-cream);
+  color: var(--brand-green-deep);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.missions-content .light-button:hover {
+  background: var(--brand-gold-soft);
+}
+
+/* Stronger separation from the next section */
+.missions-parallax::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 84px;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(8, 24, 18, 0) 0%,
+      rgba(8, 24, 18, 0.46) 60%,
+      rgba(8, 24, 18, 0.72) 100%
+    );
+}
+
+/* Give the following section a cleaner start */
+.events-section {
+  border-top: 1px solid rgba(23, 53, 45, 0.08);
+}
+
+@media (max-width: 650px) {
+  .missions-parallax {
+    padding-top: 72px;
+    padding-bottom: 78px;
+  }
+
+  .missions-parallax::after {
+    height: 64px;
+  }
+}
+
+/* Homepage cleanup after removing decorative numbering */
+.intro-section {
+  grid-template-columns: 2fr 1fr;
+  padding-left: 10vw;
+  padding-right: 10vw;
+}
+
+.ministry-card {
+  justify-content: flex-end;
+  gap: 42px;
+}
+
+@media (max-width: 950px) {
+  .intro-section {
+    grid-template-columns: 1fr;
+    padding-left: 7vw;
+    padding-right: 7vw;
+  }
+
+  .ministry-card {
+    justify-content: space-between;
+    gap: 28px;
+  }
+}
+
+/* =========================================================
+   INTERIOR PAGE SYSTEM
+   ========================================================= */
+
+.interior-page {
+  background: var(--brand-cream);
+}
+
+.interior-hero {
+  position: relative;
+  min-height: 520px;
+  display: flex;
+  align-items: flex-end;
+  color: white;
+  isolation: isolate;
+  overflow: hidden;
+}
+
+.interior-hero-image {
+  object-fit: cover;
+  object-position: center;
+  z-index: -3;
+}
+
+.interior-hero-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(7, 19, 15, 0.88),
+      rgba(7, 19, 15, 0.30)
+    ),
+    linear-gradient(
+      0deg,
+      rgba(7, 19, 15, 0.56),
+      transparent 60%
+    );
+}
+
+.interior-hero-content {
+  width: min(1180px, 86vw);
+  margin: 0 auto;
+  padding-bottom: 70px;
+}
+
+.interior-hero h1,
+.simple-page-header h1 {
+  font-family: var(--font-serif), Georgia, serif;
+  font-weight: 500;
+  line-height: 0.95;
+}
+
+.interior-hero h1 {
+  max-width: 900px;
+  font-size: clamp(3.7rem, 6vw, 6.7rem);
+}
+
+.interior-hero h1 span,
+.simple-page-header h1 span,
+.split-feature-copy h2 span {
+  display: block;
+  color: var(--brand-gold-soft);
+  font-style: italic;
+  font-weight: 400;
+}
+
+.interior-intro {
+  padding: 95px 9vw;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 90px;
+}
+
+.interior-intro h2,
+.split-feature-copy h2 {
+  font-family: var(--font-serif), Georgia, serif;
+  font-weight: 500;
+  line-height: 1;
+  font-size: clamp(3rem, 4.5vw, 5rem);
+}
+
+.interior-copy {
+  max-width: 620px;
+}
+
+.interior-copy p,
+.split-feature-copy p,
+.simple-page-header > p {
+  color: var(--muted);
+  line-height: 1.8;
+  margin-bottom: 20px;
+}
+
+.split-feature {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  min-height: 560px;
+}
+
+.split-feature-image {
+  overflow: hidden;
+}
+
+.split-feature-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 560px;
+  object-fit: cover;
+}
+
+.split-feature-copy {
+  padding: 80px 8vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: var(--brand-white);
+}
+
+.split-feature-copy p {
+  margin-top: 26px;
+}
+
+.split-feature-copy a {
+  margin-top: 12px;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.interior-cta {
+  padding: 90px 8vw;
+  text-align: center;
+  background: var(--brand-green);
+  color: white;
+}
+
+.interior-cta h2 {
+  font-family: var(--font-serif), Georgia, serif;
+  font-size: clamp(3rem, 5vw, 5.5rem);
+  font-weight: 500;
+}
+
+.interior-cta-actions {
+  margin-top: 35px;
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.outline-light-button {
+  border: 1px solid rgba(255,255,255,.45);
+  color: white;
+}
+
+.simple-page-header {
+  padding: 150px 9vw 90px;
+  background: var(--brand-green-deep);
+  color: white;
+}
+
+.simple-page-header h1 {
+  max-width: 820px;
+  font-size: clamp(4rem, 6vw, 6.5rem);
+}
+
+.simple-page-header > p {
+  max-width: 620px;
+  margin-top: 24px;
+  color: rgba(255,255,255,.72);
+}
+
+.people-grid-section {
+  padding: 85px 8vw 100px;
+}
+
+.people-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 22px;
+}
+
+.person-card {
+  background: var(--brand-white);
+}
+
+.person-photo {
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  background: var(--brand-green-soft);
+}
+
+.person-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.landscape-person-photo img {
+  object-position: center;
+}
+
+.person-info {
+  padding: 24px;
+}
+
+.person-info h2 {
+  font-family: var(--font-serif), Georgia, serif;
+  font-size: 28px;
+  font-weight: 500;
+}
+
+.person-info p {
+  margin-top: 5px;
+  color: #856d48;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: .12em;
+}
+
+@media (max-width: 950px) {
+  .interior-intro,
+  .split-feature {
+    grid-template-columns: 1fr;
+  }
+
+  .people-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .split-feature-image img {
+    min-height: 420px;
+  }
+}
+
+@media (max-width: 650px) {
+  .interior-hero {
+    min-height: 430px;
+  }
+
+  .interior-hero-content {
+    padding-bottom: 50px;
+  }
+
+  .interior-intro {
+    padding: 70px 7vw;
+    gap: 35px;
+  }
+
+  .split-feature-copy {
+    padding: 70px 7vw;
+  }
+
+  .people-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .people-grid-section {
+    padding: 65px 7vw 80px;
+  }
+
+  .simple-page-header {
+    padding: 130px 7vw 70px;
+  }
+}
+
+/* =========================================================
+   SHARED SITE HEADER
+   ========================================================= */
+
+.shared-header {
+  left: 0;
+  width: 100%;
+  z-index: 100;
+}
+
+/* Homepage floats over hero */
+.home-header {
+  position: absolute;
+  top: 0;
+  background:
+    linear-gradient(
+      180deg,
+      rgba(7, 19, 15, 0.68),
+      rgba(7, 19, 15, 0.12)
+    );
+}
+
+/* Interior pages use a solid navigation bar */
+.interior-header {
+  position: relative;
+  top: auto;
+  background: var(--brand-green-deep);
+  border-bottom: 1px solid rgba(255,255,255,.12);
+}
+
+/* Footer now belongs to layout */
+.site-footer {
+  position: relative;
+  width: 100%;
+}
+
+@media (max-width: 950px) {
+  .interior-header {
+    min-height: 96px;
+  }
+}
+
+/* =========================================================
+   HEADER VISIBILITY REFINEMENT
+   ========================================================= */
+
+.shared-header {
+  height: 104px;
+  padding: 0 5.5vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Homepage header */
+.home-header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: rgba(10, 29, 23, 0.82);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+/* Interior pages */
+.interior-header {
+  position: relative;
+  background: var(--brand-green-deep);
+}
+
+/* Force readable navigation */
+.shared-header .desktop-nav a {
+  color: rgba(255, 255, 255, 0.88);
+  opacity: 1;
+}
+
+.shared-header .desktop-nav a:hover {
+  color: var(--brand-gold-soft);
+}
+
+/* CTA */
+.shared-header .header-button {
+  color: white;
+  border-color: rgba(229, 199, 124, 0.7);
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.shared-header .header-button:hover {
+  color: var(--brand-green-deep);
+  background: var(--brand-gold);
+}
+
+/* Logo */
+.shared-header .brand-logo img {
+  width: 275px;
+  max-height: 72px;
+}
+
+@media (max-width: 1150px) {
+  .shared-header .brand-logo img {
+    width: 235px;
+  }
+}
+
+@media (max-width: 950px) {
+  .shared-header {
+    height: 92px;
+  }
+
+  .shared-header .brand-logo img {
+    width: 210px;
+  }
+}
+
+@media (max-width: 650px) {
+  .shared-header {
+    height: 84px;
+    padding: 0 6vw;
+  }
+
+  .shared-header .brand-logo img {
+    width: 175px;
+  }
+}
+
+/* =========================================================
+   UNIVERSAL SALT & LIGHT HEADER
+   Same appearance on every page
+   ========================================================= */
+
+.shared-header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 104px;
+  padding: 0 5.5vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 100;
+
+  background: rgba(10, 29, 23, 0.82);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.shared-header .brand-logo img {
+  width: 275px;
+  height: auto;
+  max-height: 72px;
+  object-fit: contain;
+  object-position: left center;
+}
+
+.shared-header .desktop-nav {
+  display: flex;
+  align-items: center;
+  gap: 34px;
+}
+
+.shared-header .desktop-nav a {
+  color: rgba(255, 255, 255, 0.88);
+  opacity: 1;
+}
+
+.shared-header .desktop-nav a:hover {
+  color: var(--brand-gold-soft);
+}
+
+.shared-header .header-button {
+  color: white;
+  border-color: rgba(229, 199, 124, 0.7);
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.shared-header .header-button:hover {
+  color: var(--brand-green-deep);
+  background: var(--brand-gold);
+}
+
+/* Remove prior page-specific header treatments */
+.home-header,
+.interior-header {
+  position: static;
+  background: none;
+}
+
+/* Interior text-only pages need room beneath the absolute header */
+.simple-page-header {
+  padding-top: 175px;
+}
+
+/* Image heroes naturally sit behind the shared header */
+.interior-hero {
+  padding-top: 104px;
+}
+
+@media (max-width: 1150px) {
+  .shared-header .brand-logo img {
+    width: 235px;
+  }
+
+  .shared-header .desktop-nav {
+    gap: 24px;
+  }
+}
+
+@media (max-width: 950px) {
+  .shared-header {
+    height: 92px;
+  }
+
+  .shared-header .brand-logo img {
+    width: 210px;
+  }
+
+  .interior-hero {
+    padding-top: 92px;
+  }
+
+  .simple-page-header {
+    padding-top: 155px;
+  }
+}
+
+@media (max-width: 650px) {
+  .shared-header {
+    height: 84px;
+    padding-left: 6vw;
+    padding-right: 6vw;
+  }
+
+  .shared-header .brand-logo img {
+    width: 175px;
+  }
+
+  .interior-hero {
+    padding-top: 84px;
+  }
+
+  .simple-page-header {
+    padding-top: 140px;
+  }
+}
+
+/* =========================================================
+   OVERSIZED SALT & LIGHT WATERMARK
+   Dark interior page sections
+   ========================================================= */
+
+.simple-page-header,
+.interior-hero,
+.interior-cta {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+}
+
+.simple-page-header::before,
+.interior-hero::before,
+.interior-cta::before {
+  content: "";
+  position: absolute;
+  width: min(760px, 68vw);
+  aspect-ratio: 1;
+  right: -8vw;
+  top: 50%;
+  transform: translateY(-50%);
+  background-image: url("/images/brand/salt-and-light-mark.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  opacity: 0.045;
+  filter: grayscale(1) brightness(2.1);
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* Keep content above watermark */
+.simple-page-header > *,
+.interior-hero > *,
+.interior-cta > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Slightly different placement for image heroes */
+.interior-hero::before {
+  width: min(680px, 60vw);
+  right: 1vw;
+  opacity: 0.035;
+}
+
+/* CTA can carry a larger centered mark */
+.interior-cta::before {
+  width: min(820px, 72vw);
+  right: 50%;
+  transform: translate(50%, -50%);
+  opacity: 0.04;
+}
+
+@media (max-width: 950px) {
+  .simple-page-header::before,
+  .interior-hero::before,
+  .interior-cta::before {
+    width: min(600px, 80vw);
+    right: -18vw;
+  }
+
+  .interior-cta::before {
+    right: 50%;
+  }
+}
+
+@media (max-width: 650px) {
+  .simple-page-header::before,
+  .interior-hero::before,
+  .interior-cta::before {
+    width: 105vw;
+    right: -42vw;
+    opacity: 0.035;
+  }
+
+  .interior-cta::before {
+    right: 50%;
+    opacity: 0.03;
+  }
+}

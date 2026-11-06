@@ -1,0 +1,77 @@
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  viewBox="0 0 512 512"
+  role="img"
+  aria-labelledby="title"
+>
+  <title id="title">Salt & Light Church mark</title>
+
+  <!-- Gold halo -->
+  <path
+    d="M92 315
+       C70 275 62 231 69 188
+       C82 109 151 50 235 42
+       C331 33 420 95 444 187
+       C456 231 451 276 428 316"
+    fill="none"
+    stroke="#D7AA4A"
+    stroke-width="18"
+    stroke-linecap="round"
+  />
+
+  <!-- Cross -->
+  <path
+    d="M228 102
+       H284
+       V204
+       H383
+       L367 234
+       H284
+       V334
+       L256 363
+       L228 334
+       V234
+       H129
+       L145 204
+       H228
+       Z"
+    fill="#F5F0E6"
+  />
+
+  <!-- Flame back -->
+  <path
+    d="M273 246
+       C301 273 316 300 309 330
+       C303 358 280 376 270 399
+       C257 430 268 454 286 476
+       C241 458 215 424 220 385
+       C225 346 259 325 269 296
+       C275 279 274 262 273 246
+       Z"
+    fill="#E5C77C"
+  />
+
+  <!-- Flame front -->
+  <path
+    d="M310 295
+       C333 319 341 345 333 371
+       C324 400 297 417 289 444
+       C284 461 289 477 298 491
+       C268 475 249 451 251 421
+       C253 392 274 373 286 350
+       C297 331 303 313 310 295
+       Z"
+    fill="#D7AA4A"
+  />
+
+  <!-- Horizon -->
+  <path
+    d="M96 424
+       C156 396 213 393 256 411
+       C299 393 356 396 416 424"
+    fill="none"
+    stroke="#F5F0E6"
+    stroke-width="12"
+    stroke-linecap="round"
+  />
+</svg>

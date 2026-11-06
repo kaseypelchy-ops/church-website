@@ -1,0 +1,332 @@
+import Image from "next/image";
+const ministries = [
+  {
+    title: "Bible Studies",
+    description:
+      "Grow deeper in faith through weekly studies, small groups, and fellowship.",
+  },
+  {
+    title: "Youth Ministry",
+    description:
+      "A place for young people to build faith, friendships, and confidence.",
+  },
+  {
+    title: "Community Outreach",
+    description:
+      "Serving our neighbors through food drives, clothing drives, missions, and local projects.",
+  },
+];
+
+const events = [
+  {
+    month: "NOV",
+    day: "12",
+    title: "Community Food Drive",
+    meta: "9:00 AM · Fellowship Hall",
+  },
+  {
+    month: "NOV",
+    day: "19",
+    title: "Wednesday Bible Study",
+    meta: "6:30 PM · Church Library",
+  },
+  {
+    month: "NOV",
+    day: "24",
+    title: "Night of Worship",
+    meta: "7:00 PM · Sanctuary",
+  },
+];
+
+export default function Home() {
+  return (
+    <main>
+      <section className="hero">
+        <div className="hero-background" />
+        <div className="hero-overlay" />
+
+        <header className="site-header">
+          <a className="brand brand-logo" href="#">
+            <Image
+              src="/images/brand/salt-and-light-primary.png"
+              alt="Salt & Light Church"
+              width={220}
+              height={160}
+              priority
+            />
+          </a>
+
+          <nav className="desktop-nav">
+            <a href="#about">About</a>
+            <a href="#ministries">Ministries</a>
+            <a href="#missions">Missions</a>
+            <a href="#events">Events</a>
+            <a href="#worship">Worship</a>
+            <a href="#give">Give</a>
+          </nav>
+
+          <a className="header-button" href="#visit">
+            Plan Your Visit
+          </a>
+        </header>
+
+        <div className="hero-content">
+          <p className="eyebrow">WELCOME TO SALT &amp; LIGHT CHURCH</p>
+
+          <h1>
+            Faith that moves
+            <span>beyond Sunday.</span>
+          </h1>
+
+          <p className="hero-copy">
+            Worship together. Grow in faith. Serve our community. Find a place
+            where you can belong and make a difference.
+          </p>
+
+          <div className="hero-actions">
+            <a className="button primary-button" href="#visit">
+              Plan Your Visit
+            </a>
+
+            <a className="text-button" href="#worship">
+              Watch Online <span>→</span>
+            </a>
+          </div>
+        </div>
+
+        <div className="scroll-indicator">
+          <span>SCROLL</span>
+          <div className="scroll-line" />
+        </div>
+      </section>
+
+      <section className="service-strip" id="visit">
+        <div>
+          <span className="service-label">SUNDAY WORSHIP</span>
+          <strong>10:30 AM</strong>
+        </div>
+
+        <div>
+          <span className="service-label">BIBLE STUDY</span>
+          <strong>9:15 AM</strong>
+        </div>
+
+        <div>
+          <span className="service-label">LOCATION</span>
+          <strong>Port Allegany, Pennsylvania</strong>
+        </div>
+
+        <a href="#">Get Directions →</a>
+      </section>
+
+      <section className="intro-section" id="about">
+        <div className="section-number">01</div>
+
+        <div className="intro-heading">
+          <p className="eyebrow dark">MORE THAN A SUNDAY MORNING</p>
+
+          <h2>
+            A church built around
+            <span>faith, people, and purpose.</span>
+          </h2>
+        </div>
+
+        <div className="intro-copy">
+          <p>
+            We believe church is more than a place you attend. It is a
+            community where people worship together, encourage one another,
+            grow in faith, and serve the people around them.
+          </p>
+
+          <p>
+            Whether you have been part of a church your entire life or you are
+            simply looking for a place to begin, there is a place for you here.
+          </p>
+
+          <a href="#">Learn About Our Church →</a>
+        </div>
+      </section>
+
+      <section className="ministries-section" id="ministries">
+        <div className="section-heading">
+          <div>
+            <p className="eyebrow dark">FIND YOUR PLACE</p>
+            <h2>Grow together.</h2>
+          </div>
+
+          <p>
+            Ministries and programs designed to help every generation build
+            meaningful relationships and grow in faith.
+          </p>
+        </div>
+
+        <div className="ministry-grid">
+          {ministries.map((ministry, index) => (
+            <article className="ministry-card" key={ministry.title}>
+              <span className="card-number">
+                {String(index + 1).padStart(2, "0")}
+              </span>
+
+              <div>
+                <h3>{ministry.title}</h3>
+                <p>{ministry.description}</p>
+              </div>
+
+              <a href="#">Explore →</a>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="missions-parallax" id="missions">
+        <div className="parallax-layer" />
+        <div className="missions-overlay" />
+
+        <div className="missions-content">
+          <p className="eyebrow">FAITH IN ACTION</p>
+
+          <h2>
+            Serving our community
+            <span>is part of who we are.</span>
+          </h2>
+
+          <p>
+            From food drives and winter coats to mission projects and
+            community events, we believe faith should make a visible
+            difference outside the walls of the church.
+          </p>
+
+          <div className="mission-links">
+            <a href="#">Food Drives</a>
+            <a href="#">Winter Coat Drive</a>
+            <a href="#">Shoe Drive</a>
+            <a href="#">Mission Projects</a>
+          </div>
+
+          <a className="button light-button" href="#">
+            Explore Our Missions
+          </a>
+        </div>
+      </section>
+
+      <section className="events-section" id="events">
+        <div className="section-heading">
+          <div>
+            <p className="eyebrow dark">WHAT&apos;S HAPPENING</p>
+            <h2>Upcoming events.</h2>
+          </div>
+
+          <a href="#">View All Events →</a>
+        </div>
+
+        <div className="events-list">
+          {events.map((event) => (
+            <article className="event-row" key={event.title}>
+              <div className="event-date">
+                <span>{event.month}</span>
+                <strong>{event.day}</strong>
+              </div>
+
+              <div className="event-details">
+                <h3>{event.title}</h3>
+                <p>{event.meta}</p>
+              </div>
+
+              <a href="#" aria-label={`View ${event.title}`}>
+                →
+              </a>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="worship-section" id="worship">
+        <div className="worship-image">
+          <div className="image-placeholder">
+            <span>WORSHIP TEAM PHOTO</span>
+          </div>
+        </div>
+
+        <div className="worship-content">
+          <p className="eyebrow dark">WORSHIP WITH US</p>
+
+          <h2>
+            Music that brings
+            <span>people together.</span>
+          </h2>
+
+          <p>
+            Our worship team leads our church each week through music,
+            reflection, and praise. Meet the musicians and vocalists who help
+            shape our worship experience.
+          </p>
+
+          <a href="#">Meet the Worship Team →</a>
+        </div>
+      </section>
+
+      <section className="giving-section" id="give">
+        <div>
+          <p className="eyebrow">GENEROSITY IN ACTION</p>
+
+          <h2>
+            Your giving helps
+            <span>make ministry possible.</span>
+          </h2>
+        </div>
+
+        <div>
+          <p>
+            Gifts support worship, ministry programs, missions, outreach, and
+            the work our church does throughout the community.
+          </p>
+
+          <a className="button light-button" href="#">
+            Give Through Tithe.ly
+          </a>
+        </div>
+      </section>
+
+      <section className="visit-section">
+        <p className="eyebrow dark">COME AS YOU ARE</p>
+
+        <h2>
+          There&apos;s a place
+          <span>for you here.</span>
+        </h2>
+
+        <a className="button dark-button" href="#">
+          Plan Your First Visit
+        </a>
+      </section>
+
+      <footer>
+        <div className="footer-brand">
+          <Image
+            src="/images/brand/salt-and-light-compact.png"
+            alt="Salt & Light Church"
+            width={110}
+            height={110}
+          />
+        </div>
+
+        <div>
+          <span>Sunday Worship</span>
+          <strong>10:30 AM</strong>
+        </div>
+
+        <div>
+          <span>Connect</span>
+          <a href="#">Facebook</a>
+          <a href="#">YouTube</a>
+          <a href="#">Contact Us</a>
+        </div>
+
+        <div>
+          <span>Visit</span>
+          <p>Port Allegany, Pennsylvania</p>
+        </div>
+      </footer>
+    </main>
+  );
+}
