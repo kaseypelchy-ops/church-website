@@ -2234,80 +2234,6 @@ footer {
 }
 
 /* =========================================================
-   INTERIOR CTA BUTTONS
-   Dedicated styles to avoid global button conflicts
-   ========================================================= */
-
-.interior-cta-primary {
-  background: var(--brand-green-deep) !important;
-  color: #ffffff !important;
-  border: 1px solid var(--brand-green-deep) !important;
-}
-
-.interior-cta-primary:hover {
-  background: var(--brand-gold) !important;
-  border-color: var(--brand-gold) !important;
-  color: var(--brand-green-deep) !important;
-}
-
-.interior-cta-secondary {
-  background: transparent !important;
-  color: var(--brand-green-deep) !important;
-  border: 1px solid rgba(23, 53, 45, 0.45) !important;
-}
-
-.interior-cta-secondary:hover {
-  background: var(--brand-green-deep) !important;
-  border-color: var(--brand-green-deep) !important;
-  color: #ffffff !important;
-}
-
-/* =========================================================
-   ABOUT PAGE CTA — FINAL ISOLATED STYLES
-   ========================================================= */
-
-.interior-cta-actions .about-cta-primary,
-.interior-cta-actions .about-cta-secondary {
-  display: inline-flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  min-height: 52px !important;
-  padding: 0 26px !important;
-
-  font-family: var(--font-sans), Arial, sans-serif !important;
-  font-size: 11px !important;
-  font-weight: 700 !important;
-  letter-spacing: 0.08em !important;
-  text-transform: uppercase !important;
-
-  text-decoration: none !important;
-}
-
-.interior-cta-actions .about-cta-primary {
-  background: #17352d !important;
-  color: #ffffff !important;
-  border: 1px solid #17352d !important;
-}
-
-.interior-cta-actions .about-cta-primary:hover {
-  background: #d7aa4a !important;
-  color: #0e211c !important;
-  border-color: #d7aa4a !important;
-}
-
-.interior-cta-actions .about-cta-secondary {
-  background: transparent !important;
-  color: #17352d !important;
-  border: 1px solid rgba(23, 53, 45, 0.45) !important;
-}
-
-.interior-cta-actions .about-cta-secondary:hover {
-  background: #17352d !important;
-  color: #ffffff !important;
-  border-color: #17352d !important;
-}
-
-/* =========================================================
    MINISTRIES PAGE
    ========================================================= */
 
@@ -2526,13 +2452,6 @@ footer {
   color: rgba(255,255,255,.76);
   line-height: 1.8;
 }
-
-.mission-event-banner .about-cta-primary {
-  background: var(--brand-gold) !important;
-  border-color: var(--brand-gold) !important;
-  color: var(--brand-green-deep) !important;
-}
-
 
 /* =========================================================
    RESPONSIVE
@@ -3372,25 +3291,6 @@ footer {
   resize: vertical;
 }
 
-.form-submit-button {
-  width: fit-content;
-  padding: 17px 28px;
-  background: var(--brand-green-deep);
-  border: 1px solid var(--brand-green-deep);
-  color: white;
-  cursor: pointer;
-  font-size: 11px;
-  font-weight: 800;
-  letter-spacing: .08em;
-  text-transform: uppercase;
-}
-
-.form-submit-button:hover {
-  background: var(--brand-gold);
-  border-color: var(--brand-gold);
-  color: var(--brand-green-deep);
-}
-
 .contact-next-steps,
 .prayer-section {
   padding: 85px 9vw;
@@ -3598,356 +3498,6 @@ footer {
   color: #f3e6be !important;
 }
 
-/* Fix Prayer Requests section completely */
-.prayer-section {
-  position: relative;
-  overflow: hidden;
-
-  background:
-    linear-gradient(
-      rgba(14, 33, 28, 0.93),
-      rgba(14, 33, 28, 0.93)
-    ),
-    url("/images/brand/salt-and-light-mark.svg") !important;
-
-  background-repeat: no-repeat !important;
-  background-position: center, calc(100% + 80px) center !important;
-  background-size: cover, 520px !important;
-
-  color: #ffffff !important;
-}
-
-.prayer-section .eyebrow {
-  color: var(--brand-gold-soft) !important;
-}
-
-.prayer-section h2 {
-  color: #ffffff !important;
-}
-
-.prayer-section h2 span {
-  color: var(--brand-gold-soft) !important;
-}
-
-.prayer-section > div:last-child p {
-  color: rgba(255, 255, 255, 0.74) !important;
-}
-
-.prayer-section .about-cta-primary {
-  background: var(--brand-gold) !important;
-  border-color: var(--brand-gold) !important;
-  color: var(--brand-green-deep) !important;
-}
-
-.prayer-section .about-cta-primary:hover {
-  background: var(--brand-gold-soft) !important;
-  border-color: var(--brand-gold-soft) !important;
-  color: var(--brand-green-deep) !important;
-}
-
-/* Make the interest form submit button readable on cream */
-.interest-form-section .form-submit-button {
-  background: var(--brand-green-deep) !important;
-  color: #ffffff !important;
-  border-color: var(--brand-green-deep) !important;
-}
-
-.interest-form-section .form-submit-button:hover {
-  background: var(--brand-gold) !important;
-  color: var(--brand-green-deep) !important;
-  border-color: var(--brand-gold) !important;
-}
-
-/* =========================================================
-   GET INVOLVED CTA FIXES
-   ========================================================= */
-
-/* Send Interest button */
-.interest-form-section .form-submit-button {
-  display: inline-flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-
-  width: fit-content !important;
-  min-height: 50px !important;
-  padding: 0 26px !important;
-
-  background: var(--brand-green-deep) !important;
-  border: 1px solid var(--brand-green-deep) !important;
-  color: #ffffff !important;
-
-  font-family: var(--font-sans), Arial, sans-serif !important;
-  font-size: 11px !important;
-  font-weight: 800 !important;
-  letter-spacing: .08em !important;
-  text-transform: uppercase !important;
-
-  cursor: pointer !important;
-}
-
-.interest-form-section .form-submit-button:hover {
-  background: var(--brand-gold) !important;
-  border-color: var(--brand-gold) !important;
-  color: var(--brand-green-deep) !important;
-}
-
-
-/* Contact the Church button */
-.prayer-section .about-cta-primary {
-  display: inline-flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-
-  width: fit-content !important;
-  min-height: 50px !important;
-  padding: 0 26px !important;
-
-  background: var(--brand-gold) !important;
-  border: 1px solid var(--brand-gold) !important;
-  color: var(--brand-green-deep) !important;
-
-  font-family: var(--font-sans), Arial, sans-serif !important;
-  font-size: 11px !important;
-  font-weight: 800 !important;
-  letter-spacing: .08em !important;
-  text-transform: uppercase !important;
-  text-decoration: none !important;
-}
-
-.prayer-section .about-cta-primary:hover {
-  background: var(--brand-gold-soft) !important;
-  border-color: var(--brand-gold-soft) !important;
-  color: var(--brand-green-deep) !important;
-}
-
-/* =========================================================
-   SHARED SITE BUTTON SYSTEM
-   Matches established Salt & Light homepage CTAs
-   ========================================================= */
-
-.site-button {
-  display: inline-flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-
-  width: fit-content !important;
-  min-width: 0 !important;
-  min-height: 0 !important;
-
-  padding: 16px 24px !important;
-
-  border-radius: 0 !important;
-
-  font-family: var(--font-sans), Arial, sans-serif !important;
-  font-size: 10px !important;
-  font-weight: 800 !important;
-  line-height: 1 !important;
-  letter-spacing: .09em !important;
-  text-transform: uppercase !important;
-  text-decoration: none !important;
-
-  cursor: pointer !important;
-  transition:
-    background .2s ease,
-    color .2s ease,
-    border-color .2s ease !important;
-}
-
-/* Cream / light button like homepage giving CTA */
-.site-button-light {
-  background: var(--brand-cream) !important;
-  border: 1px solid var(--brand-cream) !important;
-  color: var(--brand-green-deep) !important;
-}
-
-.site-button-light:hover {
-  background: var(--brand-gold-soft) !important;
-  border-color: var(--brand-gold-soft) !important;
-}
-
-
-/* Dark green button like homepage Plan Your Visit */
-.site-button-dark {
-  background: var(--brand-green-deep) !important;
-  border: 1px solid var(--brand-green-deep) !important;
-  color: #ffffff !important;
-}
-
-.site-button-dark:hover {
-  background: var(--brand-gold) !important;
-  border-color: var(--brand-gold) !important;
-  color: var(--brand-green-deep) !important;
-}
-
-
-/* Gold button for dark branded sections */
-.site-button-gold {
-  background: var(--brand-gold) !important;
-  border: 1px solid var(--brand-gold) !important;
-  color: var(--brand-green-deep) !important;
-}
-
-.site-button-gold:hover {
-  background: var(--brand-gold-soft) !important;
-  border-color: var(--brand-gold-soft) !important;
-  color: var(--brand-green-deep) !important;
-}
-
-/* =========================================================
-   SALT & LIGHT — CANONICAL BUTTON SYSTEM
-   Use these classes for every CTA across the site.
-   ========================================================= */
-
-.sl-button {
-  display: inline-flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-
-  width: fit-content !important;
-  min-width: 0 !important;
-  min-height: 48px !important;
-
-  padding: 0 24px !important;
-
-  appearance: none !important;
-  -webkit-appearance: none !important;
-
-  border-radius: 0 !important;
-
-  font-family: var(--font-sans), Arial, sans-serif !important;
-  font-size: 10px !important;
-  font-weight: 800 !important;
-  line-height: 1 !important;
-  letter-spacing: 0.09em !important;
-  text-transform: uppercase !important;
-  text-decoration: none !important;
-
-  cursor: pointer !important;
-
-  transition:
-    background-color .2s ease,
-    border-color .2s ease,
-    color .2s ease !important;
-}
-
-/* Standard button used on cream/light backgrounds */
-.sl-button-dark {
-  background-color: var(--brand-green-deep) !important;
-  border: 1px solid var(--brand-green-deep) !important;
-  color: #ffffff !important;
-}
-
-.sl-button-dark:hover {
-  background-color: var(--brand-gold) !important;
-  border-color: var(--brand-gold) !important;
-  color: var(--brand-green-deep) !important;
-}
-
-/* Button used on dark green backgrounds */
-.sl-button-light {
-  background-color: var(--brand-cream) !important;
-  border: 1px solid var(--brand-cream) !important;
-  color: var(--brand-green-deep) !important;
-}
-
-.sl-button-light:hover {
-  background-color: var(--brand-gold-soft) !important;
-  border-color: var(--brand-gold-soft) !important;
-  color: var(--brand-green-deep) !important;
-}
-
-/* Gold emphasis button */
-.sl-button-gold {
-  background-color: var(--brand-gold) !important;
-  border: 1px solid var(--brand-gold) !important;
-  color: var(--brand-green-deep) !important;
-}
-
-.sl-button-gold:hover {
-  background-color: var(--brand-gold-soft) !important;
-  border-color: var(--brand-gold-soft) !important;
-  color: var(--brand-green-deep) !important;
-}
-
-/* Optional outline treatment — same dimensions/type */
-.sl-button-outline {
-  background-color: transparent !important;
-  border: 1px solid rgba(23, 53, 45, .42) !important;
-  color: var(--brand-green-deep) !important;
-}
-
-.sl-button-outline:hover {
-  background-color: var(--brand-green-deep) !important;
-  border-color: var(--brand-green-deep) !important;
-  color: #ffffff !important;
-}
-
-/* =========================================================
-   FINAL CTA OVERRIDE
-   Exact Salt & Light button treatment
-   ========================================================= */
-
-#send-interest-button,
-#contact-church-button {
-  display: inline-flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-
-  width: auto !important;
-  min-width: 0 !important;
-  height: 48px !important;
-  min-height: 48px !important;
-
-  padding: 0 24px !important;
-  margin-top: 4px !important;
-
-  border-radius: 0 !important;
-
-  font-family: var(--font-sans), Arial, sans-serif !important;
-  font-size: 10px !important;
-  font-weight: 800 !important;
-  line-height: 1 !important;
-  letter-spacing: .09em !important;
-  text-transform: uppercase !important;
-  text-decoration: none !important;
-
-  cursor: pointer !important;
-}
-
-/* Same dark CTA treatment as the homepage */
-#send-interest-button {
-  appearance: none !important;
-  -webkit-appearance: none !important;
-
-  background-color: #0e211c !important;
-  border: 1px solid #0e211c !important;
-  color: #ffffff !important;
-}
-
-#send-interest-button:hover {
-  background-color: #d7aa4a !important;
-  border-color: #d7aa4a !important;
-  color: #0e211c !important;
-}
-
-/* Same light CTA treatment used on dark sections */
-#contact-church-button {
-  background-color: #f5f0e6 !important;
-  border: 1px solid #f5f0e6 !important;
-  color: #0e211c !important;
-}
-
-#contact-church-button:hover {
-  background-color: #d7aa4a !important;
-  border-color: #d7aa4a !important;
-  color: #0e211c !important;
-}
-
-/* =========================================================
-   LEGACY BUTTON SYSTEM
-   New CTAs should use components/ui/site-button.tsx.
-   ========================================================= */
-
 /*
    Do not add new styles to:
    .sl-button
@@ -3957,3 +3507,207 @@ footer {
    .form-submit-button
    .give-tithely-button
 */
+
+/* =========================================================
+   PRAYER SECTION
+   ========================================================= */
+
+.prayer-section {
+  position: relative;
+  overflow: hidden;
+  padding: 85px 9vw;
+
+  display: grid;
+  grid-template-columns: 1.25fr 1fr;
+  gap: 80px;
+  align-items: center;
+
+  background-color: var(--brand-green-deep);
+  color: #ffffff;
+}
+
+.prayer-section .eyebrow {
+  color: var(--brand-gold-soft);
+}
+
+.prayer-section h2 {
+  color: #ffffff;
+}
+
+.prayer-section h2 span {
+  display: block;
+  color: var(--brand-gold-soft);
+  font-style: italic;
+  font-weight: 400;
+}
+
+.prayer-section > div:last-child p {
+  margin-bottom: 28px;
+  color: rgba(255, 255, 255, .74);
+  line-height: 1.8;
+}
+
+@media (max-width: 950px) {
+  .prayer-section {
+    grid-template-columns: 1fr;
+    gap: 45px;
+  }
+}
+
+@media (max-width: 650px) {
+  .prayer-section {
+    padding: 70px 7vw;
+  }
+}
+
+/* =========================================================
+   SALT & LIGHT — FINAL BUTTON SYSTEM
+   ========================================================= */
+
+.salt-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  width: fit-content;
+  min-width: 0;
+  min-height: 48px;
+
+  padding: 0 24px;
+
+  appearance: none;
+  -webkit-appearance: none;
+
+  border-radius: 0;
+
+  font-family: var(--font-sans), Arial, sans-serif;
+  font-size: 10px;
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: .09em;
+  text-transform: uppercase;
+  text-decoration: none;
+
+  cursor: pointer;
+
+  transition:
+    background-color .2s ease,
+    border-color .2s ease,
+    color .2s ease;
+}
+
+.salt-button--dark {
+  background: #0e211c;
+  border: 1px solid #0e211c;
+  color: #ffffff;
+}
+
+.salt-button--dark:hover {
+  background: #d7aa4a;
+  border-color: #d7aa4a;
+  color: #0e211c;
+}
+
+.salt-button--light {
+  background: #f5f0e6;
+  border: 1px solid #f5f0e6;
+  color: #0e211c;
+}
+
+.salt-button--light:hover {
+  background: #e5c77c;
+  border-color: #e5c77c;
+  color: #0e211c;
+}
+
+.salt-button--gold {
+  background: #d7aa4a;
+  border: 1px solid #d7aa4a;
+  color: #0e211c;
+}
+
+.salt-button--gold:hover {
+  background: #e5c77c;
+  border-color: #e5c77c;
+  color: #0e211c;
+}
+
+.salt-button--outline {
+  background: transparent;
+  border: 1px solid rgba(23,53,45,.42);
+  color: #0e211c;
+}
+
+.salt-button--outline:hover {
+  background: #0e211c;
+  border-color: #0e211c;
+  color: #ffffff;
+}
+
+/* =========================================================
+   EYEBROW LABEL NORMALIZATION
+   ========================================================= */
+
+.eyebrow {
+  display: block;
+  width: fit-content;
+  max-width: 100%;
+  padding: 0;
+  background: transparent;
+  border: 0;
+}
+
+.section-heading .eyebrow,
+.interior-cta .eyebrow,
+.event-highlight .eyebrow,
+.involvement-feature .eyebrow,
+.giving-section .eyebrow,
+.visit-section .eyebrow {
+  width: fit-content;
+  padding: 0;
+  background: transparent;
+}
+
+/* =========================================================
+   PRAYER REQUESTS — FINAL
+   ========================================================= */
+
+.prayer-section {
+  padding: 85px 9vw;
+  display: grid;
+  grid-template-columns: 1.25fr 1fr;
+  gap: 80px;
+  align-items: center;
+
+  background: #0e211c;
+  color: #ffffff;
+}
+
+.prayer-section .eyebrow {
+  color: #e5c77c;
+}
+
+.prayer-section h2 {
+  color: #ffffff;
+}
+
+.prayer-section h2 span {
+  color: #e5c77c;
+}
+
+.prayer-section > div:last-child p {
+  color: rgba(255,255,255,.76);
+}
+
+@media (max-width: 950px) {
+  .prayer-section {
+    grid-template-columns: 1fr;
+    gap: 45px;
+  }
+}
+
+@media (max-width: 650px) {
+  .prayer-section {
+    padding: 70px 7vw;
+  }
+}
