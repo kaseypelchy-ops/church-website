@@ -3711,3 +3711,547 @@ footer {
     padding: 70px 7vw;
   }
 }
+
+/* =========================================================
+   RESPONSIVE SYSTEM — TABLET + MOBILE
+   ========================================================= */
+
+/* ---------- HEADER ---------- */
+
+.mobile-menu-toggle,
+.mobile-menu {
+  display: none;
+}
+
+@media (max-width: 1180px) {
+  .shared-header {
+    padding-left: 4vw;
+    padding-right: 4vw;
+  }
+
+  .shared-header .brand-logo img {
+    width: 220px;
+    height: auto;
+  }
+
+  .desktop-nav {
+    gap: 18px !important;
+  }
+
+  .desktop-nav a {
+    font-size: 11px;
+  }
+}
+
+@media (max-width: 980px) {
+  .shared-header {
+    height: 88px !important;
+    padding: 0 5vw !important;
+  }
+
+  .desktop-nav,
+  .desktop-header-cta {
+    display: none !important;
+  }
+
+  .shared-header .brand-logo img {
+    width: 210px !important;
+    max-height: 62px !important;
+  }
+
+  .mobile-menu-toggle {
+    display: flex;
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+
+    background: transparent;
+    border: 1px solid rgba(255,255,255,.28);
+    cursor: pointer;
+  }
+
+  .mobile-menu-toggle span {
+    width: 20px;
+    height: 1px;
+    background: #fff;
+    transition: transform .2s ease, opacity .2s ease;
+  }
+
+  .mobile-menu-open {
+    display: flex;
+  }
+
+  .mobile-menu {
+    position: absolute;
+    top: 88px;
+    left: 0;
+    right: 0;
+
+    padding: 28px 5vw 32px;
+
+    flex-direction: column;
+    gap: 28px;
+
+    background: rgba(14,33,28,.98);
+    border-top: 1px solid rgba(255,255,255,.1);
+
+    box-shadow: 0 18px 40px rgba(0,0,0,.22);
+    z-index: 200;
+  }
+
+  .mobile-menu nav {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .mobile-menu nav a {
+    padding: 14px 0;
+    border-bottom: 1px solid rgba(255,255,255,.1);
+
+    color: rgba(255,255,255,.9);
+    font-size: 13px;
+    font-weight: 600;
+    text-decoration: none;
+  }
+}
+
+
+/* =========================================================
+   TABLET — 768px to 1024px
+   ========================================================= */
+
+@media (max-width: 1024px) {
+
+  /* Global spacing */
+  .intro-section,
+  .ministries-section,
+  .events-section,
+  .interior-intro,
+  .giving-purpose,
+  .contact-intro,
+  .contact-form-section,
+  .interest-form-section,
+  .involvement-grid-section,
+  .visit-overview,
+  .visit-expect {
+    padding-left: 6vw !important;
+    padding-right: 6vw !important;
+  }
+
+  /* Interior hero */
+  .interior-hero {
+    min-height: 440px !important;
+    padding-top: 88px !important;
+  }
+
+  .interior-hero-content {
+    width: min(88vw, 900px) !important;
+  }
+
+  .interior-hero-content h1 {
+    max-width: 760px !important;
+    font-size: clamp(3.4rem, 7vw, 5.7rem) !important;
+  }
+
+  /* Generic two-column layouts */
+  .interior-intro,
+  .split-feature,
+  .ministry-feature,
+  .ministry-feature-reverse,
+  .outreach-feature,
+  .event-highlight,
+  .visit-overview,
+  .visit-image-section,
+  .giving-outreach,
+  .contact-intro,
+  .contact-form-section,
+  .interest-form-section,
+  .involvement-feature,
+  .contact-next-steps,
+  .prayer-section,
+  .mission-event-banner {
+    grid-template-columns: 1fr !important;
+  }
+
+  .ministry-feature-reverse .ministry-feature-image,
+  .ministry-feature-reverse .ministry-feature-copy {
+    order: initial !important;
+  }
+
+  /* Grids */
+  .visit-expect-grid,
+  .giving-purpose-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+
+  .involvement-grid,
+  .outreach-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+
+  /* Images */
+  .ministry-feature-image img,
+  .outreach-feature-image img,
+  .event-highlight-image img,
+  .visit-image-section img,
+  .giving-outreach img,
+  .involvement-feature-image img {
+    min-height: 400px !important;
+    max-height: 520px;
+    object-fit: cover;
+  }
+
+  /* Section headings */
+  .section-heading {
+    align-items: flex-start !important;
+    gap: 30px !important;
+  }
+
+  /* Footer */
+  .site-footer {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 45px !important;
+    padding-left: 6vw !important;
+    padding-right: 6vw !important;
+  }
+}
+
+
+/* =========================================================
+   MOBILE — <= 700px
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+  html,
+  body {
+    overflow-x: hidden;
+  }
+
+  body {
+    font-size: 15px;
+  }
+
+  /* ---------- Header ---------- */
+
+  .shared-header {
+    height: 80px !important;
+    padding: 0 5.5vw !important;
+  }
+
+  .shared-header .brand-logo img {
+    width: 170px !important;
+    max-height: 54px !important;
+  }
+
+  .mobile-menu {
+    top: 80px;
+  }
+
+
+  /* ---------- Homepage hero ---------- */
+
+  .hero {
+    min-height: 620px !important;
+    height: auto !important;
+  }
+
+  .hero-content {
+    width: 89vw !important;
+    margin: 0 auto !important;
+    padding-top: 175px !important;
+    padding-bottom: 80px !important;
+  }
+
+  .hero h1 {
+    max-width: 100% !important;
+    font-size: clamp(3.3rem, 15vw, 5rem) !important;
+    line-height: .92 !important;
+  }
+
+  .hero-content > p {
+    max-width: 92% !important;
+  }
+
+
+  /* ---------- Interior hero ---------- */
+
+  .interior-hero {
+    min-height: 390px !important;
+    padding-top: 80px !important;
+  }
+
+  .interior-hero-content {
+    width: 88vw !important;
+  }
+
+  .interior-hero-content h1 {
+    max-width: 100% !important;
+    font-size: clamp(3rem, 13vw, 4.5rem) !important;
+    line-height: .95 !important;
+  }
+
+  .interior-hero-image {
+    object-position: center center !important;
+  }
+
+
+  /* ---------- Global sections ---------- */
+
+  .intro-section,
+  .ministries-section,
+  .events-section,
+  .interior-intro,
+  .giving-purpose,
+  .contact-intro,
+  .contact-form-section,
+  .interest-form-section,
+  .involvement-grid-section,
+  .visit-overview,
+  .visit-expect,
+  .online-giving-section {
+    padding: 65px 6vw !important;
+  }
+
+  .interior-intro,
+  .contact-intro,
+  .contact-form-section,
+  .interest-form-section,
+  .visit-overview {
+    gap: 42px !important;
+  }
+
+
+  /* ---------- Headings ---------- */
+
+  .section-heading {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 20px !important;
+    margin-bottom: 38px !important;
+  }
+
+  .section-heading h2,
+  .interior-intro h2,
+  .contact-intro h2,
+  .contact-form-heading h2,
+  .interest-form-copy h2,
+  .giving-purpose h2,
+  .visit-primary h2,
+  .visit-expect-heading h2 {
+    font-size: clamp(2.7rem, 12vw, 4rem) !important;
+    line-height: .98 !important;
+  }
+
+
+  /* ---------- Cards/grids ---------- */
+
+  .ministry-grid,
+  .outreach-grid,
+  .involvement-grid,
+  .visit-expect-grid,
+  .giving-purpose-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .ministry-card,
+  .outreach-card,
+  .involvement-card,
+  .visit-expect-grid article,
+  .giving-purpose-grid article {
+    min-height: auto !important;
+    padding: 30px 26px !important;
+  }
+
+
+  /* ---------- Split image sections ---------- */
+
+  .split-feature,
+  .ministry-feature,
+  .ministry-feature-reverse,
+  .outreach-feature,
+  .event-highlight,
+  .visit-image-section,
+  .giving-outreach,
+  .involvement-feature,
+  .mission-event-banner {
+    grid-template-columns: 1fr !important;
+  }
+
+  .ministry-feature-copy,
+  .outreach-feature-copy,
+  .event-highlight-copy,
+  .visit-image-section > div:last-child,
+  .giving-outreach > div:last-child,
+  .involvement-feature-copy {
+    padding: 58px 6vw !important;
+  }
+
+  .ministry-feature-image img,
+  .outreach-feature-image img,
+  .event-highlight-image img,
+  .visit-image-section img,
+  .giving-outreach img,
+  .involvement-feature-image img {
+    min-height: 310px !important;
+    max-height: 390px !important;
+    object-fit: cover !important;
+  }
+
+
+  /* ---------- Events ---------- */
+
+  .event-row {
+    grid-template-columns: 72px minmax(0, 1fr) !important;
+    gap: 18px !important;
+    padding: 28px 0 !important;
+  }
+
+  .event-date-block {
+    width: 66px !important;
+    height: 78px !important;
+  }
+
+  .event-date-block strong {
+    font-size: 32px !important;
+  }
+
+  .event-row-copy h3 {
+    font-size: 27px !important;
+  }
+
+  .event-row-action {
+    grid-column: 2 !important;
+  }
+
+
+  /* ---------- Forms ---------- */
+
+  .form-row {
+    grid-template-columns: 1fr !important;
+    gap: 20px !important;
+  }
+
+  .church-form {
+    width: 100%;
+  }
+
+  .church-form input,
+  .church-form select,
+  .church-form textarea {
+    width: 100%;
+    min-height: 48px;
+    font-size: 16px !important;
+  }
+
+  .church-form textarea {
+    min-height: 150px;
+  }
+
+
+  /* ---------- CTAs ---------- */
+
+  .interior-cta,
+  .contact-next-steps,
+  .prayer-section,
+  .mission-event-banner {
+    padding: 65px 6vw !important;
+    grid-template-columns: 1fr !important;
+    gap: 34px !important;
+  }
+
+  .interior-cta-actions {
+    flex-direction: column !important;
+    align-items: center !important;
+  }
+
+  .salt-button {
+    min-height: 48px;
+    padding: 0 22px;
+  }
+
+
+  /* ---------- Service strip ---------- */
+
+  .service-strip {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    height: auto !important;
+  }
+
+  .service-strip > * {
+    padding: 18px 6vw !important;
+  }
+
+
+  /* ---------- Missions ---------- */
+
+  .missions-parallax {
+    min-height: 520px !important;
+    padding: 70px 0 !important;
+  }
+
+  .missions-content {
+    width: 88vw !important;
+    margin-left: 6vw !important;
+  }
+
+
+  /* ---------- Worship ---------- */
+
+  .worship-image img,
+  .worship-photo {
+    min-height: 320px !important;
+    object-fit: cover !important;
+  }
+
+
+  /* ---------- Footer ---------- */
+
+  .site-footer {
+    grid-template-columns: 1fr !important;
+    gap: 34px !important;
+
+    padding: 55px 6vw !important;
+
+    text-align: left;
+  }
+
+  .footer-brand img {
+    width: 90px !important;
+    height: auto !important;
+  }
+}
+
+
+/* =========================================================
+   SMALL MOBILE — <= 430px
+   ========================================================= */
+
+@media (max-width: 430px) {
+
+  .shared-header .brand-logo img {
+    width: 155px !important;
+  }
+
+  .hero h1 {
+    font-size: clamp(3rem, 14vw, 4.2rem) !important;
+  }
+
+  .interior-hero-content h1 {
+    font-size: clamp(2.8rem, 12vw, 3.8rem) !important;
+  }
+
+  .section-heading h2,
+  .interior-intro h2 {
+    font-size: clamp(2.5rem, 11vw, 3.5rem) !important;
+  }
+
+  .salt-button {
+    max-width: 100%;
+  }
+}
